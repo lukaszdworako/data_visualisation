@@ -1,0 +1,630 @@
+<div class="game-date">
+    <table class="schedule-date">
+        <thead>
+        <tr class="date-header">
+            <th colspan="4"><h4><strong class="ng-binding">Sat, Jun 30, 2018</strong></h4></th>
+        </tr>
+        <tr class="headers">
+            <th colspan="3">Teams</th>
+            <th class="last">Detail</th>
+        </tr>
+        </thead>
+        <!-- ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+        <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+               ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope odd">
+        <tr class="detail-cells desktop-cells">
+            <!-- ngIf: game.AwayID !== null -->
+            <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                    href="https://www.tsn.ca/fifa-world-cup/team/40861"><span><span
+                    class="logo logo-flags flags-logo-48 flags-argentina-48-2x"></span> <strong
+                    class="city-long ng-binding">Argentina</strong><strong
+                    class="city-short ng-binding">ARG</strong></span></a></td><!-- end ngIf: game.AwayID !== null -->
+            <!-- ngIf: game.AwayID == null -->
+            <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+            <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+            <!-- ngIf: game.Status == 'Final' -->
+            <td class="state ng-scope" ng-if="game.Status == &#39;Final&#39;"><span
+                    ng-class="{&#39;winner&#39;: game.AwayOutcome == &#39;Win&#39;||game.AwayShootoutOutcome == 1}"
+                    class="ng-binding"><!-- ngIf: hasPenaltyShootout(game) -->3</span> - <span
+                    ng-class="{&#39;winner&#39;: game.HomeOutcome == &#39;Win&#39; ||game.HomeShootoutOutcome == 1 }"
+                    class="ng-binding winner">4<!-- ngIf: hasPenaltyShootout(game) --></span></td>
+            <!-- end ngIf: game.Status == 'Final' -->
+            <!-- ngIf: game.HomeID !== null -->
+            <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                    href="https://www.tsn.ca/fifa-world-cup/team/40860"><span><strong class="city-long ng-binding">France</strong><strong
+                    class="city-short ng-binding">FRA</strong> <span
+                    class="logo logo-flags flags-logo-48 flags-france-48-2x"></span></span></a></td>
+            <!-- end ngIf: game.HomeID !== null -->
+            <!-- ngIf: game.HomeID == null -->
+            <!-- ngIf: game.Status == 'Pre-Game' -->
+            <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            <td ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103364"><strong
+                    class="game-page">Game Page</strong></a></td>
+            <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+        </tr>
+        <tr class="detail-cells mobile-cells">
+            <!-- ngIf: game.Status == 'Pre-Game' -->
+            <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            <td colspan="4"
+                ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103364"><strong
+                    class="game-page">Game Page</strong></a></td>
+            <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+        </tr>
+        </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+        <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+               ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope even">
+        <tr class="detail-cells desktop-cells">
+            <!-- ngIf: game.AwayID !== null -->
+            <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                    href="https://www.tsn.ca/fifa-world-cup/team/40855"><span><span
+                    class="logo logo-flags flags-logo-48 flags-portugal-48-2x"></span> <strong
+                    class="city-long ng-binding">Portugal</strong><strong
+                    class="city-short ng-binding">POR</strong></span></a></td><!-- end ngIf: game.AwayID !== null -->
+            <!-- ngIf: game.AwayID == null -->
+            <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+            <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+            <!-- ngIf: game.Status == 'Final' -->
+            <td class="state ng-scope" ng-if="game.Status == &#39;Final&#39;"><span
+                    ng-class="{&#39;winner&#39;: game.AwayOutcome == &#39;Win&#39;||game.AwayShootoutOutcome == 1}"
+                    class="ng-binding"><!-- ngIf: hasPenaltyShootout(game) -->1</span> - <span
+                    ng-class="{&#39;winner&#39;: game.HomeOutcome == &#39;Win&#39; ||game.HomeShootoutOutcome == 1 }"
+                    class="ng-binding winner">2<!-- ngIf: hasPenaltyShootout(game) --></span></td>
+            <!-- end ngIf: game.Status == 'Final' -->
+            <!-- ngIf: game.HomeID !== null -->
+            <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                    href="https://www.tsn.ca/fifa-world-cup/team/40849"><span><strong class="city-long ng-binding">Uruguay</strong><strong
+                    class="city-short ng-binding">URU</strong> <span
+                    class="logo logo-flags flags-logo-48 flags-uruguay-48-2x"></span></span></a></td>
+            <!-- end ngIf: game.HomeID !== null -->
+            <!-- ngIf: game.HomeID == null -->
+            <!-- ngIf: game.Status == 'Pre-Game' -->
+            <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            <td ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103362"><strong
+                    class="game-page">Game Page</strong></a></td>
+            <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+        </tr>
+        <tr class="detail-cells mobile-cells">
+            <!-- ngIf: game.Status == 'Pre-Game' -->
+            <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            <td colspan="4"
+                ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103362"><strong
+                    class="game-page">Game Page</strong></a></td>
+            <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+        </tr>
+        </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+    </table>
+</div>
+</div><!-- end ngRepeat: day in Schedule track by $index -->
+<div id="fifa_wc-league-schedule" class="league-schedule ng-scope" ng-repeat="day in Schedule track by $index"
+     ng-show="(Schedule != null) &amp;&amp; (day.Schedule.Game.length &gt; 0)" ng-hide="!dataLoaded">
+    <div class="game-date">
+        <table class="schedule-date">
+            <thead>
+            <tr class="date-header">
+                <th colspan="4"><h4><strong class="ng-binding">Sun, Jul 1, 2018</strong></h4></th>
+            </tr>
+            <tr class="headers">
+                <th colspan="3">Teams</th>
+                <th class="last">Detail</th>
+            </tr>
+            </thead>
+            <!-- ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+            <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+                   ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope odd">
+            <tr class="detail-cells desktop-cells">
+                <!-- ngIf: game.AwayID !== null -->
+                <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40852"><span><span
+                        class="logo logo-flags flags-logo-48 flags-russia-48-2x"></span> <strong
+                        class="city-long ng-binding">Russia</strong><strong
+                        class="city-short ng-binding">RUS</strong></span></a></td>
+                <!-- end ngIf: game.AwayID !== null -->
+                <!-- ngIf: game.AwayID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+                <!-- ngIf: game.Status == 'Final' -->
+                <td class="state ng-scope" ng-if="game.Status == &#39;Final&#39;"><span
+                        ng-class="{&#39;winner&#39;: game.AwayOutcome == &#39;Win&#39;||game.AwayShootoutOutcome == 1}"
+                        class="ng-binding winner"><!-- ngIf: hasPenaltyShootout(game) --><span
+                        ng-if="hasPenaltyShootout(game)" class="ng-binding ng-scope">(4)</span>
+                    <!-- end ngIf: hasPenaltyShootout(game) -->1</span> - <span
+                        ng-class="{&#39;winner&#39;: game.HomeOutcome == &#39;Win&#39; ||game.HomeShootoutOutcome == 1 }"
+                        class="ng-binding">1<!-- ngIf: hasPenaltyShootout(game) --><span
+                        ng-if="hasPenaltyShootout(game)" class="ng-binding ng-scope">(3)</span>
+                    <!-- end ngIf: hasPenaltyShootout(game) --></span></td><!-- end ngIf: game.Status == 'Final' -->
+                <!-- ngIf: game.HomeID !== null -->
+                <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40856"><span><strong class="city-long ng-binding">Spain</strong><strong
+                        class="city-short ng-binding">ESP</strong> <span
+                        class="logo logo-flags flags-logo-48 flags-spain-48-2x"></span></span></a></td>
+                <!-- end ngIf: game.HomeID !== null -->
+                <!-- ngIf: game.HomeID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103363"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            <tr class="detail-cells mobile-cells">
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td colspan="4"
+                    ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103363"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+            <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+                   ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope even">
+            <tr class="detail-cells desktop-cells">
+                <!-- ngIf: game.AwayID !== null -->
+                <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40859"><span><span
+                        class="logo logo-flags flags-logo-48 flags-denmark-48-2x"></span> <strong
+                        class="city-long ng-binding">Denmark</strong><strong class="city-short ng-binding">DEN</strong></span></a>
+                </td><!-- end ngIf: game.AwayID !== null -->
+                <!-- ngIf: game.AwayID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+                <!-- ngIf: game.Status == 'Final' -->
+                <td class="state ng-scope" ng-if="game.Status == &#39;Final&#39;"><span
+                        ng-class="{&#39;winner&#39;: game.AwayOutcome == &#39;Win&#39;||game.AwayShootoutOutcome == 1}"
+                        class="ng-binding"><!-- ngIf: hasPenaltyShootout(game) --><span ng-if="hasPenaltyShootout(game)"
+                                                                                        class="ng-binding ng-scope">(2)</span>
+                    <!-- end ngIf: hasPenaltyShootout(game) -->1</span> - <span
+                        ng-class="{&#39;winner&#39;: game.HomeOutcome == &#39;Win&#39; ||game.HomeShootoutOutcome == 1 }"
+                        class="ng-binding winner">1<!-- ngIf: hasPenaltyShootout(game) --><span
+                        ng-if="hasPenaltyShootout(game)" class="ng-binding ng-scope">(3)</span>
+                    <!-- end ngIf: hasPenaltyShootout(game) --></span></td><!-- end ngIf: game.Status == 'Final' -->
+                <!-- ngIf: game.HomeID !== null -->
+                <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40863"><span><strong class="city-long ng-binding">Croatia</strong><strong
+                        class="city-short ng-binding">CRO</strong> <span
+                        class="logo logo-flags flags-logo-48 flags-croatia-48-2x"></span></span></a></td>
+                <!-- end ngIf: game.HomeID !== null -->
+                <!-- ngIf: game.HomeID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103376"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            <tr class="detail-cells mobile-cells">
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td colspan="4"
+                    ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103376"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+        </table>
+    </div>
+</div><!-- end ngRepeat: day in Schedule track by $index -->
+<div id="fifa_wc-league-schedule" class="league-schedule ng-scope" ng-repeat="day in Schedule track by $index"
+     ng-show="(Schedule != null) &amp;&amp; (day.Schedule.Game.length &gt; 0)" ng-hide="!dataLoaded">
+    <div class="game-date">
+        <table class="schedule-date">
+            <thead>
+            <tr class="date-header">
+                <th colspan="4"><h4><strong class="ng-binding">Mon, Jul 2, 2018</strong></h4></th>
+            </tr>
+            <tr class="headers">
+                <th colspan="3">Teams</th>
+                <th class="last">Detail</th>
+            </tr>
+            </thead>
+            <!-- ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+            <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+                   ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope odd">
+            <tr class="detail-cells desktop-cells">
+                <!-- ngIf: game.AwayID !== null -->
+                <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40869"><span><span
+                        class="logo logo-flags flags-logo-48 flags-mexico-48-2x"></span> <strong
+                        class="city-long ng-binding">Mexico</strong><strong
+                        class="city-short ng-binding">MEX</strong></span></a></td>
+                <!-- end ngIf: game.AwayID !== null -->
+                <!-- ngIf: game.AwayID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+                <!-- ngIf: game.Status == 'Final' -->
+                <td class="state ng-scope" ng-if="game.Status == &#39;Final&#39;"><span
+                        ng-class="{&#39;winner&#39;: game.AwayOutcome == &#39;Win&#39;||game.AwayShootoutOutcome == 1}"
+                        class="ng-binding"><!-- ngIf: hasPenaltyShootout(game) -->0</span> - <span
+                        ng-class="{&#39;winner&#39;: game.HomeOutcome == &#39;Win&#39; ||game.HomeShootoutOutcome == 1 }"
+                        class="ng-binding winner">2<!-- ngIf: hasPenaltyShootout(game) --></span></td>
+                <!-- end ngIf: game.Status == 'Final' -->
+                <!-- ngIf: game.HomeID !== null -->
+                <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40866"><span><strong class="city-long ng-binding">Brazil</strong><strong
+                        class="city-short ng-binding">BRA</strong> <span
+                        class="logo logo-flags flags-logo-48 flags-brazil-48-2x"></span></span></a></td>
+                <!-- end ngIf: game.HomeID !== null -->
+                <!-- ngIf: game.HomeID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103403"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            <tr class="detail-cells mobile-cells">
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td colspan="4"
+                    ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103403"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+            <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+                   ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope even">
+            <tr class="detail-cells desktop-cells">
+                <!-- ngIf: game.AwayID !== null -->
+                <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40878"><span><span
+                        class="logo logo-flags flags-logo-48 flags-japan-48-2x"></span> <strong
+                        class="city-long ng-binding">Japan</strong><strong
+                        class="city-short ng-binding">JPN</strong></span></a></td>
+                <!-- end ngIf: game.AwayID !== null -->
+                <!-- ngIf: game.AwayID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+                <!-- ngIf: game.Status == 'Final' -->
+                <td class="state ng-scope" ng-if="game.Status == &#39;Final&#39;"><span
+                        ng-class="{&#39;winner&#39;: game.AwayOutcome == &#39;Win&#39;||game.AwayShootoutOutcome == 1}"
+                        class="ng-binding"><!-- ngIf: hasPenaltyShootout(game) -->2</span> - <span
+                        ng-class="{&#39;winner&#39;: game.HomeOutcome == &#39;Win&#39; ||game.HomeShootoutOutcome == 1 }"
+                        class="ng-binding winner">3<!-- ngIf: hasPenaltyShootout(game) --></span></td>
+                <!-- end ngIf: game.Status == 'Final' -->
+                <!-- ngIf: game.HomeID !== null -->
+                <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40874"><span><strong class="city-long ng-binding">Belgium</strong><strong
+                        class="city-short ng-binding">BEL</strong> <span
+                        class="logo logo-flags flags-logo-48 flags-belgium-48-2x"></span></span></a></td>
+                <!-- end ngIf: game.HomeID !== null -->
+                <!-- ngIf: game.HomeID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103405"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            <tr class="detail-cells mobile-cells">
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td colspan="4"
+                    ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103405"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+        </table>
+    </div>
+</div><!-- end ngRepeat: day in Schedule track by $index -->
+<div id="fifa_wc-league-schedule" class="league-schedule ng-scope" ng-repeat="day in Schedule track by $index"
+     ng-show="(Schedule != null) &amp;&amp; (day.Schedule.Game.length &gt; 0)" ng-hide="!dataLoaded">
+    <div class="game-date">
+        <table class="schedule-date">
+            <thead>
+            <tr class="date-header">
+                <th colspan="4"><h4><strong class="ng-binding">Tue, Jul 3, 2018</strong></h4></th>
+            </tr>
+            <tr class="headers">
+                <th colspan="3">Teams</th>
+                <th class="last">Detail</th>
+            </tr>
+            </thead>
+            <!-- ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+            <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+                   ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope odd">
+            <tr class="detail-cells desktop-cells">
+                <!-- ngIf: game.AwayID !== null -->
+                <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40867"><span><span
+                        class="logo logo-flags flags-logo-48 flags-switzerland-48-2x"></span> <strong
+                        class="city-long ng-binding">Switzerland</strong><strong
+                        class="city-short ng-binding">SUI</strong></span></a></td>
+                <!-- end ngIf: game.AwayID !== null -->
+                <!-- ngIf: game.AwayID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+                <!-- ngIf: game.Status == 'Final' -->
+                <td class="state ng-scope" ng-if="game.Status == &#39;Final&#39;"><span
+                        ng-class="{&#39;winner&#39;: game.AwayOutcome == &#39;Win&#39;||game.AwayShootoutOutcome == 1}"
+                        class="ng-binding"><!-- ngIf: hasPenaltyShootout(game) -->0</span> - <span
+                        ng-class="{&#39;winner&#39;: game.HomeOutcome == &#39;Win&#39; ||game.HomeShootoutOutcome == 1 }"
+                        class="ng-binding winner">1<!-- ngIf: hasPenaltyShootout(game) --></span></td>
+                <!-- end ngIf: game.Status == 'Final' -->
+                <!-- ngIf: game.HomeID !== null -->
+                <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40872"><span><strong class="city-long ng-binding">Sweden</strong><strong
+                        class="city-short ng-binding">SWE</strong> <span
+                        class="logo logo-flags flags-logo-48 flags-sweden-48-2x"></span></span></a></td>
+                <!-- end ngIf: game.HomeID !== null -->
+                <!-- ngIf: game.HomeID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103402"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            <tr class="detail-cells mobile-cells">
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td colspan="4"
+                    ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103402"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+            <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+                   ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope even">
+            <tr class="detail-cells desktop-cells">
+                <!-- ngIf: game.AwayID !== null -->
+                <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40875"><span><span
+                        class="logo logo-flags flags-logo-48 flags-england-48-2x"></span> <strong
+                        class="city-long ng-binding">England</strong><strong class="city-short ng-binding">ENG</strong></span></a>
+                </td><!-- end ngIf: game.AwayID !== null -->
+                <!-- ngIf: game.AwayID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+                <!-- ngIf: game.Status == 'Final' -->
+                <td class="state ng-scope" ng-if="game.Status == &#39;Final&#39;"><span
+                        ng-class="{&#39;winner&#39;: game.AwayOutcome == &#39;Win&#39;||game.AwayShootoutOutcome == 1}"
+                        class="ng-binding winner"><!-- ngIf: hasPenaltyShootout(game) --><span
+                        ng-if="hasPenaltyShootout(game)" class="ng-binding ng-scope">(4)</span>
+                    <!-- end ngIf: hasPenaltyShootout(game) -->1</span> - <span
+                        ng-class="{&#39;winner&#39;: game.HomeOutcome == &#39;Win&#39; ||game.HomeShootoutOutcome == 1 }"
+                        class="ng-binding">1<!-- ngIf: hasPenaltyShootout(game) --><span
+                        ng-if="hasPenaltyShootout(game)" class="ng-binding ng-scope">(3)</span>
+                    <!-- end ngIf: hasPenaltyShootout(game) --></span></td><!-- end ngIf: game.Status == 'Final' -->
+                <!-- ngIf: game.HomeID !== null -->
+                <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40877"><span><strong class="city-long ng-binding">Colombia</strong><strong
+                        class="city-short ng-binding">COL</strong> <span
+                        class="logo logo-flags flags-logo-48 flags-colombia-48-2x"></span></span></a></td>
+                <!-- end ngIf: game.HomeID !== null -->
+                <!-- ngIf: game.HomeID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103404"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            <tr class="detail-cells mobile-cells">
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+                <td colspan="4"
+                    ng-if="game.Status == &#39;Final&#39; || game.Status == &#39;In-Progress&#39; || game.Status == &#39;Half-Over&#39;"
+                    class="game-detail final ng-scope"><a href="https://www.tsn.ca/fifa-world-cup/game/103404"><strong
+                        class="game-page">Game Page</strong></a></td>
+                <!-- end ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+        </table>
+    </div>
+</div><!-- end ngRepeat: day in Schedule track by $index -->
+<div id="fifa_wc-league-schedule" class="league-schedule ng-scope" ng-repeat="day in Schedule track by $index"
+     ng-show="(Schedule != null) &amp;&amp; (day.Schedule.Game.length &gt; 0)" ng-hide="!dataLoaded">
+    <div class="game-date">
+        <table class="schedule-date">
+            <thead>
+            <tr class="date-header">
+                <th colspan="4"><h4><strong class="ng-binding">Fri, Jul 6, 2018</strong></h4></th>
+            </tr>
+            <tr class="headers">
+                <th colspan="3">Teams</th>
+                <th class="last">Detail</th>
+            </tr>
+            </thead>
+            <!-- ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+            <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+                   ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope odd">
+            <tr class="detail-cells desktop-cells">
+                <!-- ngIf: game.AwayID !== null -->
+                <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40860"><span><span
+                        class="logo logo-flags flags-logo-48 flags-france-48-2x"></span> <strong
+                        class="city-long ng-binding">France</strong><strong
+                        class="city-short ng-binding">FRA</strong></span></a></td>
+                <!-- end ngIf: game.AwayID !== null -->
+                <!-- ngIf: game.AwayID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <td class="state ng-scope"
+                    ng-if="game.Status == &#39;Pre-Game&#39; || game.Status == &#39;Postponed&#39;">at
+                </td><!-- end ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+                <!-- ngIf: game.Status == 'Final' -->
+                <!-- ngIf: game.HomeID !== null -->
+                <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40849"><span><strong class="city-long ng-binding">Uruguay</strong><strong
+                        class="city-short ng-binding">URU</strong> <span
+                        class="logo logo-flags flags-logo-48 flags-uruguay-48-2x"></span></span></a></td>
+                <!-- end ngIf: game.HomeID !== null -->
+                <!-- ngIf: game.HomeID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <td ng-if="game.Status == &#39;Pre-Game&#39;" class="game-detail pregame ng-scope">
+                    <!-- ngIf: game.GameTimeNotCertain == true --><!-- ngIf: game.GameTimeNotCertain == false --><span
+                        class="game-time ng-binding ng-scope" ng-if="game.GameTimeNotCertain == false">10:00 AM ET <span
+                        class="channel ng-binding"></span> </span><!-- end ngIf: game.GameTimeNotCertain == false --> <a
+                        href="https://www.tsn.ca/fifa-world-cup/game/103714"><strong class="game-page">Game
+                    Page</strong></a></td><!-- end ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            <tr class="detail-cells mobile-cells">
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <td colspan="4" ng-if="game.Status == &#39;Pre-Game&#39;" class="game-detail pregame ng-scope">
+                    <!-- ngIf: game.GameTimeNotCertain == true --><!-- ngIf: game.GameTimeNotCertain == false --><span
+                        class="game-time ng-binding ng-scope" ng-if="game.GameTimeNotCertain == false">10:00 AM ET<span
+                        class="channel ng-binding"></span> </span><!-- end ngIf: game.GameTimeNotCertain == false --> <a
+                        href="https://www.tsn.ca/fifa-world-cup/game/103714"><strong class="game-page">Game
+                    Page</strong></a></td><!-- end ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+            <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+                   ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope even">
+            <tr class="detail-cells desktop-cells">
+                <!-- ngIf: game.AwayID !== null -->
+                <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40874"><span><span
+                        class="logo logo-flags flags-logo-48 flags-belgium-48-2x"></span> <strong
+                        class="city-long ng-binding">Belgium</strong><strong class="city-short ng-binding">BEL</strong></span></a>
+                </td><!-- end ngIf: game.AwayID !== null -->
+                <!-- ngIf: game.AwayID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <td class="state ng-scope"
+                    ng-if="game.Status == &#39;Pre-Game&#39; || game.Status == &#39;Postponed&#39;">at
+                </td><!-- end ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+                <!-- ngIf: game.Status == 'Final' -->
+                <!-- ngIf: game.HomeID !== null -->
+                <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40866"><span><strong class="city-long ng-binding">Brazil</strong><strong
+                        class="city-short ng-binding">BRA</strong> <span
+                        class="logo logo-flags flags-logo-48 flags-brazil-48-2x"></span></span></a></td>
+                <!-- end ngIf: game.HomeID !== null -->
+                <!-- ngIf: game.HomeID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <td ng-if="game.Status == &#39;Pre-Game&#39;" class="game-detail pregame ng-scope">
+                    <!-- ngIf: game.GameTimeNotCertain == true --><!-- ngIf: game.GameTimeNotCertain == false --><span
+                        class="game-time ng-binding ng-scope" ng-if="game.GameTimeNotCertain == false">2:00 PM ET <span
+                        class="channel ng-binding"></span> </span><!-- end ngIf: game.GameTimeNotCertain == false --> <a
+                        href="https://www.tsn.ca/fifa-world-cup/game/103716"><strong class="game-page">Game
+                    Page</strong></a></td><!-- end ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            <tr class="detail-cells mobile-cells">
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <td colspan="4" ng-if="game.Status == &#39;Pre-Game&#39;" class="game-detail pregame ng-scope">
+                    <!-- ngIf: game.GameTimeNotCertain == true --><!-- ngIf: game.GameTimeNotCertain == false --><span
+                        class="game-time ng-binding ng-scope" ng-if="game.GameTimeNotCertain == false">2:00 PM ET<span
+                        class="channel ng-binding"></span> </span><!-- end ngIf: game.GameTimeNotCertain == false --> <a
+                        href="https://www.tsn.ca/fifa-world-cup/game/103716"><strong class="game-page">Game
+                    Page</strong></a></td><!-- end ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+        </table>
+    </div>
+</div><!-- end ngRepeat: day in Schedule track by $index -->
+<div id="fifa_wc-league-schedule" class="league-schedule ng-scope" ng-repeat="day in Schedule track by $index"
+     ng-show="(Schedule != null) &amp;&amp; (day.Schedule.Game.length &gt; 0)" ng-hide="!dataLoaded">
+    <div class="game-date">
+        <table class="schedule-date">
+            <thead>
+            <tr class="date-header">
+                <th colspan="4"><h4><strong class="ng-binding">Sat, Jul 7, 2018</strong></h4></th>
+            </tr>
+            <tr class="headers">
+                <th colspan="3">Teams</th>
+                <th class="last">Detail</th>
+            </tr>
+            </thead>
+            <!-- ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+            <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+                   ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope odd">
+            <tr class="detail-cells desktop-cells">
+                <!-- ngIf: game.AwayID !== null -->
+                <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40875"><span><span
+                        class="logo logo-flags flags-england-48-2x flags-logo-48"></span> <strong
+                        class="city-long ng-binding">England</strong><strong class="city-short ng-binding">ENG</strong></span></a>
+                </td><!-- end ngIf: game.AwayID !== null -->
+                <!-- ngIf: game.AwayID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <td class="state ng-scope"
+                    ng-if="game.Status == &#39;Pre-Game&#39; || game.Status == &#39;Postponed&#39;">at
+                </td><!-- end ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+                <!-- ngIf: game.Status == 'Final' -->
+                <!-- ngIf: game.HomeID !== null -->
+                <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40872"><span><strong class="city-long ng-binding">Sweden</strong><strong
+                        class="city-short ng-binding">SWE</strong> <span
+                        class="logo logo-flags flags-sweden-48-2x flags-logo-48"></span></span></a></td>
+                <!-- end ngIf: game.HomeID !== null -->
+                <!-- ngIf: game.HomeID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <td ng-if="game.Status == &#39;Pre-Game&#39;" class="game-detail pregame ng-scope">
+                    <!-- ngIf: game.GameTimeNotCertain == true --><!-- ngIf: game.GameTimeNotCertain == false --><span
+                        class="game-time ng-binding ng-scope" ng-if="game.GameTimeNotCertain == false">10:00 AM ET <span
+                        class="channel ng-binding"></span> </span><!-- end ngIf: game.GameTimeNotCertain == false --> <a
+                        href="https://www.tsn.ca/fifa-world-cup/game/103717"><strong class="game-page">Game
+                    Page</strong></a></td><!-- end ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            <tr class="detail-cells mobile-cells">
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <td colspan="4" ng-if="game.Status == &#39;Pre-Game&#39;" class="game-detail pregame ng-scope">
+                    <!-- ngIf: game.GameTimeNotCertain == true --><!-- ngIf: game.GameTimeNotCertain == false --><span
+                        class="game-time ng-binding ng-scope" ng-if="game.GameTimeNotCertain == false">10:00 AM ET<span
+                        class="channel ng-binding"></span> </span><!-- end ngIf: game.GameTimeNotCertain == false --> <a
+                        href="https://www.tsn.ca/fifa-world-cup/game/103717"><strong class="game-page">Game
+                    Page</strong></a></td><!-- end ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+            <tbody ng-repeat="game in day.Schedule.Game | orderBy:&#39;GameDateTimeET&#39; track by $index"
+                   ng-class-even="&#39;even&#39;" ng-class-odd="&#39;odd&#39;" class="ng-scope even">
+            <tr class="detail-cells desktop-cells">
+                <!-- ngIf: game.AwayID !== null -->
+                <td class="away ng-scope" ng-if="game.AwayID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40863"><span><span
+                        class="logo logo-flags flags-croatia-48-2x flags-logo-48"></span> <strong
+                        class="city-long ng-binding">Croatia</strong><strong class="city-short ng-binding">CRO</strong></span></a>
+                </td><!-- end ngIf: game.AwayID !== null -->
+                <!-- ngIf: game.AwayID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <td class="state ng-scope"
+                    ng-if="game.Status == &#39;Pre-Game&#39; || game.Status == &#39;Postponed&#39;">at
+                </td><!-- end ngIf: game.Status == 'Pre-Game' || game.Status == 'Postponed' -->
+                <!-- ngIf: game.Status == 'In-Progress'|| game.Status == 'Half-Over' -->
+                <!-- ngIf: game.Status == 'Final' -->
+                <!-- ngIf: game.HomeID !== null -->
+                <td class="home ng-scope" ng-if="game.HomeID !== null"><a
+                        href="https://www.tsn.ca/fifa-world-cup/team/40852"><span><strong class="city-long ng-binding">Russia</strong><strong
+                        class="city-short ng-binding">RUS</strong> <span
+                        class="logo logo-flags flags-russia-48-2x flags-logo-48"></span></span></a></td>
+                <!-- end ngIf: game.HomeID !== null -->
+                <!-- ngIf: game.HomeID == null -->
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <td ng-if="game.Status == &#39;Pre-Game&#39;" class="game-detail pregame ng-scope">
+                    <!-- ngIf: game.GameTimeNotCertain == true --><!-- ngIf: game.GameTimeNotCertain == false --><span
+                        class="game-time ng-binding ng-scope" ng-if="game.GameTimeNotCertain == false">2:00 PM ET <span
+                        class="channel ng-binding"></span> </span><!-- end ngIf: game.GameTimeNotCertain == false --> <a
+                        href="https://www.tsn.ca/fifa-world-cup/game/103715"><strong class="game-page">Game
+                    Page</strong></a></td><!-- end ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            <tr class="detail-cells mobile-cells">
+                <!-- ngIf: game.Status == 'Pre-Game' -->
+                <td colspan="4" ng-if="game.Status == &#39;Pre-Game&#39;" class="game-detail pregame ng-scope">
+                    <!-- ngIf: game.GameTimeNotCertain == true --><!-- ngIf: game.GameTimeNotCertain == false --><span
+                        class="game-time ng-binding ng-scope" ng-if="game.GameTimeNotCertain == false">2:00 PM ET<span
+                        class="channel ng-binding"></span> </span><!-- end ngIf: game.GameTimeNotCertain == false --> <a
+                        href="https://www.tsn.ca/fifa-world-cup/game/103715"><strong class="game-page">Game
+                    Page</strong></a></td><!-- end ngIf: game.Status == 'Pre-Game' -->
+                <!-- ngIf: game.Status == 'Final' || game.Status == 'In-Progress' || game.Status == 'Half-Over' -->
+            </tr>
+            </tbody><!-- end ngRepeat: game in day.Schedule.Game | orderBy:'GameDateTimeET' track by $index -->
+        </table>
+    </div>
+</div><!-- end ngRepeat: day in Schedule track by $index -->
